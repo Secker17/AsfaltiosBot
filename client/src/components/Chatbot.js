@@ -229,7 +229,7 @@ const Chatbot = () => {
     }, 100);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/chatbot/send', {
+      const response = await axios.post('http://localhost:10000/api/chatbot/send', {
         message: newMessage,
         context: `About Asfaltios:...`, // Your context or any additional info
       });
@@ -242,7 +242,7 @@ const Chatbot = () => {
         messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
 
-      await axios.post('http://localhost:5000/api/chat/store', {
+      await axios.post('http://localhost:10000/api/chat/store', {
         chatId,
         messages: [...messages, userMessage, botMessage],
       });
@@ -268,7 +268,6 @@ const Chatbot = () => {
         <ChatWindow isOpen={isOpen}>
           <ChatHeader>
             <HeaderTitle>
-              {/* Add your image here */}
               <AvatarIcon src="https://i.ibb.co/DfTZXdQ/image-removebg-preview-2-3-2.png" alt="Chatbot Avatar" />
               <div>
                 <ChatTitle>ASFALTIOS AI</ChatTitle>
