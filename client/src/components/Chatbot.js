@@ -229,7 +229,7 @@ const Chatbot = () => {
     }, 100);
 
     try {
-      const response = await axios.post('http://localhost:10000/api/chatbot/send', {
+      const response = await axios.post('https://asfaltiosbot.onrender.com/api/chatbot/send', {
         message: newMessage,
         context: `About Asfaltios:...`, // Your context or any additional info
       });
@@ -242,7 +242,7 @@ const Chatbot = () => {
         messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
 
-      await axios.post('http://localhost:10000/api/chat/store', {
+      await axios.post('https://asfaltiosbot.onrender.com/api/chat/store', {
         chatId,
         messages: [...messages, userMessage, botMessage],
       });
